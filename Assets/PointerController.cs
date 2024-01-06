@@ -26,11 +26,11 @@ public class PointerController : MonoBehaviour
         }
 
         // Adjusted to invert input axis if necessary
-        float horizontal = Input.GetAxis("Horizontal") * -1; // Invert if necessary
-        float vertical = Input.GetAxis("Vertical") * -1; // Invert if necessary
+        float horizontal = Input.GetAxis("Horizontal"); // Invert if necessary
+        float vertical = Input.GetAxis("Vertical"); // Invert if necessary
 
         Vector3 movement = new Vector3(horizontal, 0, vertical) * speed;
-        controller.Move(movement * Time.deltaTime);
+        controller.Move(Camera.main.transform.TransformVector(movement) * Time.deltaTime);
 
         // Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)

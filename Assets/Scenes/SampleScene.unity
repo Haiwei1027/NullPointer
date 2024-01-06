@@ -351,7 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1041749493}
   smoothSpeed: 0.07
-  offset: {x: 0, y: 0, z: 0}
+  horizontalOffset: 1.2
+  verticalOffset: 1.2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +541,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 34895af6db468ea46a671dca131bd8c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.916
+      value: 3.132
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34895af6db468ea46a671dca131bd8c3,
         type: 3}
@@ -577,6 +578,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 34895af6db468ea46a671dca131bd8c3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10456e47e64b46d408f1be3776a52fdb, type: 2}
     - target: {fileID: 919132149155446097, guid: 34895af6db468ea46a671dca131bd8c3,
         type: 3}
       propertyPath: m_Name
@@ -882,7 +888,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

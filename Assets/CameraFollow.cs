@@ -6,17 +6,20 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public float smoothSpeed = 0.125f;
-    public Vector3 offset;
-
-    private Vector3 velocity = Vector3.zero;
+    public float horizontalOffset;
+    public float verticalOffset;
 
     void LateUpdate()
     {
-        Vector3 desiredPosition = target.position + target.TransformDirection(offset);
-        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
+        Vector3 desiredPosition = target.position + Vector3.up * verticalOffset;
+        float distance = Vector3.Distance(transform.position, desiredPosition);
+        
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 
+            Mathf.Lerp(0,smoothSpeed,Mathf.Clamp01(distance - horizontalOffset)));
+        
         transform.position = smoothedPosition;
 
         // Make the camera look at the target
-        transform.LookAt(target);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(desiredPosition - transform.position, Vector3.up), smoothSpeed);
     }
 }
