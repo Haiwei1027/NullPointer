@@ -13,31 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "Dev plan.md",
                 "mode": "source",
                 "source": false
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "696d0d9225cb8a58",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "588f98b2e92b5cd3",
+            "id": "c46199347211ae6c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "Dev plan.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "Dev plan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "Dev plan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md"
+                "file": "Dev plan.md"
               }
             }
           }
@@ -164,8 +159,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d2e1e7b5db19ba5c",
+  "active": "c46199347211ae6c",
   "lastOpenFiles": [
+    "Minigames/Read The Flags.md",
+    "Minigames/Too Many Worms.md",
+    "Dev plan.md",
+    "Minigames",
+    "Love Letter.md",
     "Welcome.md"
   ]
 }
