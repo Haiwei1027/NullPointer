@@ -1,7 +1,7 @@
 
 # Game idea
 ---
-You are a cursor, your human is using the computer, and tries to access the dark web through a dodgy link. You, the cursor, gets teleported through the link down into a fantasy, top-down town. You now have to make your way through the dark web, teleporting back through the correct hyperlinks to return back to your computer. You can find and collect bitcoins as currency.
+You are a cursor, your human is using the computer, and tries to access the dark web through a dodgy link. You, the cursor, gets teleported through the link down into a fantasy, top-down town. You now have to make your way through the dark web, teleporting back through the correct hyperlinks to return back to your computer. You can find and collect #bitcoin as currency.
 Characters in the game are reference to real life malwares.
 ## Interactable Characters: 
 - #Loveletter > if you get kidnapped by them you have to give them #bitcoin to free yourself 
