@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "75a4ddc22a6babc5",
+            "id": "c46199347211ae6c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "c46199347211ae6c",
+            "id": "038fdbd27e4b517d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev plan.md"
+                "file": "Game Story Line.md"
               }
             }
           }
@@ -159,11 +159,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c46199347211ae6c",
+  "active": "038fdbd27e4b517d",
   "lastOpenFiles": [
-    "Minigames/Read The Flags.md",
-    "Minigames/Too Many Worms.md",
     "Dev plan.md",
+    "Minigames/Ghost Keylogger.md",
+    "Minigames/ILOVEYOU worm.md",
+    "Game Story Line.md",
+    "Minigames/Trojan Horse.md",
     "Minigames",
     "Love Letter.md",
     "Welcome.md"
