@@ -10,7 +10,7 @@ public class Bitcoin : MonoBehaviour
     {
         if (other.gameObject == Player.Instance.Character)
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
             Player.Instance.CollectBitcoin(amount);
         }
     }
