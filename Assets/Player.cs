@@ -6,7 +6,11 @@ public class Player : MonoBehaviour
 {
     public static Player Instance {  get; private set; }
 
-    private int bitcoins;
+    public GameObject Character { get; private set; }
+
+    [SerializeField] GameObject characterPrefab;
+
+    private float bitcoins;
 
     private void Awake()
     {
@@ -19,13 +23,14 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void CollectBitcoin(int amount)
+    public void CollectBitcoin(float amount)
     {
         if (amount < 0) { return; }
         bitcoins += amount;
+        Debug.Log($"amount now is {bitcoins}");
     }
 
-    public void TransferBitcoin(int amount)
+    public void TransferBitcoin(float amount)
     {
         if (amount < 0) { return; }
         if (bitcoins - amount < 0) { return; }
@@ -33,9 +38,17 @@ public class Player : MonoBehaviour
         
     }
 
+    public void Spawn()
+    {
+        if (Character != null) { return; }
+        Vector3 spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        Character = Instantiate(characterPrefab,spawnPoint,Quaternion.identity);
+        CameraFollow.Instance.Follow(Character.transform);
+    }
+
     private void Start()
     {
-        
+        Spawn();
     }
 
     private void Update()
