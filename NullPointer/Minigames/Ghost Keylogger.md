@@ -6,7 +6,7 @@ You are also given a little user profile in the top right
 like "John, Middle Aged, Likes Football"
 
 and so then when you're typing in all the passwords one after the one
-there's an oppourtunity to focus on ones about football for example
+there's an opportunity to focus on ones about football for example
 
 
 ## Mechanics
