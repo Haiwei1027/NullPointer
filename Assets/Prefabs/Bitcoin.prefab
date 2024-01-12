@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6791023938323707175}
   - component: {fileID: 3657268260237712954}
   - component: {fileID: 2400950525203248776}
+  - component: {fileID: 6579195695830805228}
   m_Layer: 0
   m_Name: Bitcoin
   m_TagString: Untagged
@@ -121,5 +122,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+--- !u!114 &6579195695830805228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279494751851996414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eaf1199139ccd54e8ea8ac646615d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   movementAmount: 0.25
-  speed: 1.75
+  speed: 4
+  direction: {x: 0, y: 1, z: 0}
