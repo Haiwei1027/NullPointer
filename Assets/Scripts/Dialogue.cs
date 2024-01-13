@@ -37,4 +37,13 @@ public class Dialogue : MonoBehaviour
             DialogueUI.Instance.Show(this);
         }
     }
+    
+    public void OnTriggerExit(Collider other)
+    {
+        if (IsFinished()) { return; }
+        if (other.gameObject == Player.Instance.Character)
+        {
+            DialogueUI.Instance.Hide();
+        }
+    }
 }

@@ -38,6 +38,10 @@ public class DialogueUI : MonoBehaviour
                 dialogueText.text = current.GetLine(); 
             }
         }
+        if (isShown && !current.IsFinished() && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Hide();
+        }
     }
 
     public void Show(Dialogue dialogue)
