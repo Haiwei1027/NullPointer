@@ -20,8 +20,8 @@ public class PointerController : MonoBehaviour
     void Update()
     {
         // Take input
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetKey(KeyCode.D) ? 1 : (Input.GetKey(KeyCode.A) ? -1 : 0);
+        float vertical = Input.GetKey(KeyCode.W) ? 1 : (Input.GetKey(KeyCode.S) ? -1 : 0);
 
         movement = Camera.main.transform.TransformVector(new Vector3(horizontal, 0, vertical) * speed);
         if (movement.magnitude > 0)
