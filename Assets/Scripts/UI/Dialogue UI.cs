@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using TMPro;
 
@@ -9,7 +11,8 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] TMP_Text dialogueText;
 
-    private Coroutine dialogueRoutine;
+    private Dialogue current;
+    private bool isShown = false;
 
     private void Awake()
     {
@@ -21,23 +24,34 @@ public class DialogueUI : MonoBehaviour
         Hide();
     }
 
-    IEnumerator DialogueUpdate(Dialogue dialogue)
+    private void Update()
     {
-        dialogueText.text = dialogue.GetLine();
-        yield return null;
+        if (isShown && !current.IsFinished() && Input.GetKeyDown(KeyCode.Return))
+        {
+            current.Continue();
+            if (current.IsFinished())
+            {
+                Hide();
+            }
+            else
+            {
+                dialogueText.text = current.GetLine(); 
+            }
+        }
     }
 
     public void Show(Dialogue dialogue)
     {
         SetAllChildren(true);
-        dialogueRoutine = StartCoroutine(DialogueUpdate(dialogue));
+        this.current = dialogue;
+        isShown = true;
+        dialogueText.text = current.GetLine();
     }
 
     public void Hide()
     {
         SetAllChildren(false);
-        if (dialogueRoutine != null) { StopCoroutine(dialogueRoutine); }
-        
+        isShown = false;
     }
 
     private void SetAllChildren(bool active)

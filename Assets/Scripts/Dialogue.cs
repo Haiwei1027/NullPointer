@@ -9,7 +9,12 @@ public class Dialogue : MonoBehaviour
 
     public string GetLine()
     {
-        return narrative.lines[currentLine];
+        if (!IsFinished())
+        {
+            return narrative.lines[currentLine];
+        }
+
+        return null;
     }
 
     public void Continue()
