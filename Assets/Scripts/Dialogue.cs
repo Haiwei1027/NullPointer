@@ -35,6 +35,7 @@ public class Dialogue : MonoBehaviour
         if (other.gameObject == Player.Instance.Character)
         {
             DialogueUI.Instance.Show(this);
+            CameraFollow.Instance.Follow(transform);
         }
     }
     
@@ -44,6 +45,7 @@ public class Dialogue : MonoBehaviour
         if (other.gameObject == Player.Instance.Character)
         {
             DialogueUI.Instance.Hide();
+            CameraFollow.Instance.Follow(Player.Instance.Character.transform);
         }
     }
 }

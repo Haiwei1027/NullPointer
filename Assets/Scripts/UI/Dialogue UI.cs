@@ -32,6 +32,7 @@ public class DialogueUI : MonoBehaviour
             if (current.IsFinished())
             {
                 Hide();
+                CameraFollow.Instance.Follow(Player.Instance.Character.transform);
             }
             else
             {
