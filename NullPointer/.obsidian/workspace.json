@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dev plan.md",
+                "file": "Game Story Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev plan.md"
+                "file": "Game Story Line.md"
               }
             }
           }
@@ -161,8 +161,8 @@
   },
   "active": "c46199347211ae6c",
   "lastOpenFiles": [
-    "Minigames/Untitled.md",
     "Dev plan.md",
+    "Minigames/Untitled.md",
     "Minigames/Too Many Worms.md",
     "Minigames/Read The Flags.md",
     "Minigames",

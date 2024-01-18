@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         if (Character != null) { return; }
         Vector3 spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
         Character = Instantiate(characterPrefab,spawnPoint,Quaternion.identity);
-        CameraFollow.Instance.Follow(Character.transform);
+        CameraFollow.Instance.SetTarget(Character.transform);
     }
 
     private void Start()

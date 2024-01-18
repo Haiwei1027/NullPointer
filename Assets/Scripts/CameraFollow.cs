@@ -1,39 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public static CameraFollow Instance { get; private set; }
 
-    public Transform target;
-    public float smoothSpeed = 0.125f;
-    public float horizontalOffset;
-    public float verticalOffset;
-    public Vector3 rotationOffset;
+    private Vector3 previousTargetPosition;
+    private Vector3 targetVelocity;
+    public Transform Target { get ; private set; }
+
+    public FollowModel followModel;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void Follow(Transform target)
+    public void SetTarget(Transform target)
     {
-        this.target = target;
+        this.Target = target;
+    }
+
+    protected virtual void FollowTarget()
+    {
+        Vector3 desiredPosition = Target.position;
+        desiredPosition.y = transform.position.y;
+        desiredPosition = Target.position + Vector3.up * followModel.height + (transform.position - desiredPosition).normalized * followModel.minDistance;
+        if (followModel.velocityFactor != 0)
+        {
+            Vector3 filteredVelocity = targetVelocity;
+            filteredVelocity.y = 0f;
+            desiredPosition += followModel.velocityFactor * filteredVelocity;
+        }
+        Quaternion desiredRotation = Quaternion.LookRotation(Target.position + followModel.lookOffset + targetVelocity - transform.position, followModel.upAxis);
+
+        transform.position = Vector3.Lerp(transform.position,desiredPosition,Time.deltaTime * followModel.linearSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.fixedDeltaTime * followModel.angularSpeed);
     }
 
     void FixedUpdate()
     {
-        Vector3 desiredPosition = target.position + Vector3.up * verticalOffset;
-        Vector3 delta = transform.position - desiredPosition;
-        delta.y = 0;
-        desiredPosition += delta.normalized * horizontalOffset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        
-        transform.position = smoothedPosition;
-
-        // Make the camera look at the target
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position, Vector3.up) * Quaternion.Euler(rotationOffset), smoothSpeed);
+        if (Target == null) { return; }
+        targetVelocity = Target.position - previousTargetPosition;
+        FollowTarget();
+        previousTargetPosition = Target.position;
     }
 }
